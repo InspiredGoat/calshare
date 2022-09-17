@@ -18,8 +18,20 @@ html {
 }
 
 #calendar {
-	margin: auto;
-	display:inline-block;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	font-size: 14pt;
+	border-width: 2px;
+	border-style: solid;
+}
+
+td {
+	width: 150px;
+	height: 150px;
+	text-align: left top;
+	vertical-align: top;
 }
 
 #cal-header {
