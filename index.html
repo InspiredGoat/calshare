@@ -14,11 +14,30 @@
 			<a href="#"> go back </a>
 		</div>
 	</div>
-	<div id="main">
-		<form action="localhost:8888/change">
-			<div id="baseinfo">
-			</div>
 
+
+	<div id="event-monday" class="overlay">
+		<div class="popup">
+			<form action="http://localhost:8888/listen" method="post">
+				Event name:
+				<input type="text" name="name" style="width: 45%; float: right;"></input>
+				<br>
+				Location:
+				<input type="text" name="location" style="width: 45%; float: right;"></input>
+				<br>
+				Description:
+				<textarea name="desc" rows="3" style="width: 45%; float: right;"></textarea>
+				<br>
+				<br>
+				<br>
+				<input type="Submit" value="Submit"></input>
+				<a href="#"> go back </a>
+			</form>
+		</div>
+	</div>
+
+	<div id="main">
+	<form action="http://localhost:8888/listen" method="post">
 
 	<table id="calendar">
 		<tr>
@@ -31,7 +50,23 @@
 			<th> Sun </th>
 		</tr>
 		<tr>
-			<td> 1 </td>
+			<td> <b>1</b>
+				<ul>
+					<li><a href="">Richard's birthday</a></li>
+					<li>2 people interested</li>
+				</ul>
+				Your Availabilty:
+				<select name="testname">
+					<option value="0">Unspecified</option>
+					<option value="1">Available</option>
+					<option value="2">Tentative</option>
+					<option value="3">Unlikely</option>
+					<option value="4">Busy</option>
+				</select>
+				<a href="#event-monday">
+					add event
+				</a>
+			</td>
 			<td> 2 </td>
 			<td> 3 </td>
 			<td> 4 </td>
@@ -49,462 +84,8 @@
 			<td> 7 </td>
 		</tr>
 	</table>
-<!-- <div id="calendar"> -->
-<!-- <div id="cal-header"><div class="day"> Mon </div><div class="day"> Tue </div><div class="day"> Wed </div><div class="day"> Thu </div><div class="day"> Fri </div><div class="day"> Sat </div><div class="day"> Sun </div></div> -->
-<!-- <div id="cal-weeks"> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">October 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">November 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">December 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">2023<br> January 1st </div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">February 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">March 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">April 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">May 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">June 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">July 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">August 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- 	<div class="day">11</div> -->
-<!-- 	<div class="day">12</div> -->
-<!-- 	<div class="day">13</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">14</div> -->
-<!-- 	<div class="day">15</div> -->
-<!-- 	<div class="day">16</div> -->
-<!-- 	<div class="day">17</div> -->
-<!-- 	<div class="day">18</div> -->
-<!-- 	<div class="day">19</div> -->
-<!-- 	<div class="day">20</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">21</div> -->
-<!-- 	<div class="day">22</div> -->
-<!-- 	<div class="day">23</div> -->
-<!-- 	<div class="day">24</div> -->
-<!-- 	<div class="day">25</div> -->
-<!-- 	<div class="day">26</div> -->
-<!-- 	<div class="day">27</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">28</div> -->
-<!-- 	<div class="day">29</div> -->
-<!-- 	<div class="day">30</div> -->
-<!-- 	<div class="day">31</div> -->
-<!-- 	<div class="day">September 1st </div> -->
-<!-- 	<div class="day">2</div> -->
-<!-- 	<div class="day">3</div> -->
-<!-- </div> -->
-<!-- <div class="week"> -->
-<!-- 	<div class="day">4</div> -->
-<!-- 	<div class="day">5</div> -->
-<!-- 	<div class="day">6</div> -->
-<!-- 	<div class="day">7</div> -->
-<!-- 	<div class="day">8</div> -->
-<!-- 	<div class="day">9</div> -->
-<!-- 	<div class="day">10</div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-		</form>
+	<input name="submit"type="submit"></input>
+	</form>
 	</div>
 </body>
 </html>

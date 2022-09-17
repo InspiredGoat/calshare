@@ -9,7 +9,7 @@ import (
 	"log"
 	"time"
 	"strconv"
-	// "net/http"
+	"net/http"
 )
 
 type Availability int16
@@ -158,6 +158,16 @@ func calendar_to_html_file(filename string, day_start int, month_start time.Mont
 	write("</div>");
 }
 
+func listen(w http.ResponseWriter, r *http.Request) {
+	println(r.FormValue("name"));
+	println(r.FormValue("location"));
+	println(r.FormValue("desc"));
+	println(r.FormValue("testname"));
+
+	//fmt.Fprintf(w, "hello\n");
+	http.Redirect(w, r, "localhost:8000", http.StatusSeeOther);
+}
+
 func main() {
 	fmt.Println("Started...");
 
@@ -165,5 +175,7 @@ func main() {
 
 	fmt.Println("Done!");
 
-//	http.HandleFunc("/create", );
+	http.HandleFunc("/listen", listen);
+
+	http.ListenAndServe(":8888", nil);
 }
