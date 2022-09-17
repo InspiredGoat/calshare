@@ -1,0 +1,135 @@
+:root {
+	--main-bg-col: #f2f2f2;
+	--accent-bg-col: #fafafa;
+
+	--day-width: 150px;
+}
+
+
+html {
+	font-size: 20pt;
+	font-family: Helvetica;
+}
+
+#main {
+	width: calc((var(--day-width) + 12px) * 7);
+	margin: auto;
+}
+
+#calendar {
+	margin: auto;
+	display:inline-block;
+}
+
+#cal-header {
+	display: flex;
+	/* border-left: solid black 3px; */
+	margin-bottom: -5px;
+}
+#cal-header .day {
+	display: inline-block;
+	width: calc(var(--day-width) - 30px);
+	height: 35px;
+
+	background-color: var(--accent-bg-col);
+
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+
+	border-width: 2px;
+	border-style: solid;
+	border-bottom-style: none;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 5px;
+	margin-left: 12px;
+	margin-right: 12px;
+	user-select: none;
+}
+
+#cal-weeks {
+	display: inline-block;
+	border-style: solid;
+	border-width: 2px;
+	border-bottom-left-radius: 13px;
+	border-bottom-right-radius: 13px;
+
+	background-color: var(--accent-bg-col);
+}
+
+.week {
+	display: flex;
+	width: calc((var(--day-width) + 12px) * 7);
+	/* border-left: solid black 3px; */
+}
+.week + .week {
+	border-top-style: solid;
+}
+
+.day {
+	display: flexbox;
+	width: var(--day-width);
+	height: var(--day-width);
+
+	font-size: 13pt;
+	color: black;
+
+	border-width: 2px;
+	margin: 0px;
+	padding-left: 5px;
+	padding-top: 5px;
+
+	user-select: none;
+}
+.day + .day {
+	border-left-style: solid;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	visibility: hidden;
+	background: rgba(0,0,0, 0.7);
+	transition: opacity 200ms;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+}
+
+
+@media (max-width: 1200px) {
+	:root {
+		--day-width: 120px;
+	}
+	.day {
+		font-size: 12pt;
+	}
+}
+@media (max-width: 950px) {
+	:root {
+		--day-width: 90px;
+	}
+	.day {
+		font-size: 10pt;
+	}
+}
